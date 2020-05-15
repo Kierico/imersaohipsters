@@ -1,0 +1,352 @@
+/* reset do css*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*content-box*/
+}
+
+body {
+    /*background-image: url('https://i.ytimg.com/vi/iriinRSXvVc/maxresdefault.jpg');*/
+    /*background-size: auto 100vh;*/ /*100vw*/ /*100px horizontal 100px vertical*/
+    font-family: 'Amatic SC', cursive;
+    height: 100vh;
+    font-size: 10px;
+  }
+
+  /* se a tela tiver pelo menos 400px vai carregar estes estilos*/
+  @media (min-width: 240px) {
+    body {
+      font-size: 10px;
+    }
+  }
+  
+  @media (min-width: 360px) {
+    body {
+      font-size: 11px;
+    }
+  }
+  
+  /*Breakpoint - ponto de quebra*/
+  @media (min-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 720px) {
+    body {
+      font-size: 13px;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  header {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4em;
+  }
+
+  .cabecalho {
+    transform: scale(0) translateY(-50vh);
+    opacity: 0;
+    animation: /*1s*/ linear 1.5s cabecalhoanimado forwards;
+  }
+
+  @keyframes cabecalhoanimado {
+    /*0% {                                  0% ou From
+                                          100% ou To
+    }*/
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .menu {
+    background-color: orange;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    background-color: orange;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 10px 10px 20px 0px black;
+  }
+  
+  .menu ul {
+    display: flex;
+    justify-content: center; /*space-between*/
+  }
+  
+  .menu li{
+    list-style: none;
+  }
+
+  .menu a {
+    display: block; /*display: inline;*/
+    padding: 10px 20px;
+    transition: background-color 1s, color .5s; /*a melhor forma é sempre descrevendo a quem esta sendo aplicada as transicoes 'background-color e color' que estao no .menu a:hover {...}*/
+  }
+
+  .menu a:active,
+  .menu a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.9em;
+  }
+  
+  /*a:hover {
+    text-decoration: underline;
+  }*/
+  
+  .site-subtitle,
+  .site-title{
+    color: black;
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: 4em; /*4x o tamanho do body*/
+    font-family: 'Nova Mono', monospace;
+  }
+  
+  .site-subtitle {
+    font-style: italic;
+    font-family: 'Cutive Mono', monospace;
+  }
+
+  .subtitle {
+    font-family: 'Cutive Mono', monospace;
+  }
+
+  h3 {
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 24px;
+  }
+
+  .sobre {
+    padding: 2em;
+    min-height: 100vh;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 2em;
+    text-align: center;
+    margin-top: -2em;
+  }
+
+  .sobre h6 {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .sobre p {
+    /*color: black;*/
+    text-indent: 1.5em;
+    margin-bottom: 1em;
+    text-align: justify;
+    font-family: 'Cutive Mono', monospace;
+  }
+
+  .sobre a {
+    font-size: 1em;
+    color: orangered;
+    transition: text-shadow .2s;
+  }
+
+  .sobre a:hover {
+    text-shadow: 0px 0px 4px black;
+  }
+
+  .sobre .guiana {
+    width: 240px;
+    height: 144px;
+    /*float: left;*/ /*faz o texto ficar ao lado da imagem ou contornar*/
+    margin-right: 1em;
+    /*border-radius: 50%;*/ /*imagem redonda*/
+    box-shadow: 5px 5px 10px 0px black;
+  }
+
+  /*formas geometricas*/
+  /*.sobre .guiana {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); /*polygon e path tem parametos de funcoes entre os (...)
+  }*/
+
+  @media (min-width: 560px) {
+    .sobre .guiana:hover {
+      /*box-shadow: 5px 5px 10px 0px black;*/
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)
+    }
+  }
+
+  /*clip-path resposivel*/
+  @media (min-width: 560px) {
+    .sobre .guiana {
+      float: left; /*so para quando a tela for grande*/
+    }
+  }
+
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 2em;
+    text-align: center;
+    min-height: 100vh;
+    margin-left: 3em;
+    padding: 1.44em;
+  }
+
+  .portfolio h4 {
+    font-size: 2em;
+    padding: .3em;
+  }
+
+  .portfolio .grid {
+    display: grid; /*grid nao forca a coluna como o 'flex'*/
+    gap: 8em; /*ao inves de usar o 'margin'*/
+  }
+
+  @media (min-width: 560px) {
+    .portfolio .grid {
+      grid-template-columns: repeat(2, 240px);
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 240px);
+      justify-content: center;
+      /*align-content: center;*/
+      /*height: calc(100vh - 8em - 48px);*/
+    }
+  }
+
+  .img-portfolio {
+    /*padding: 5px;*/
+    width: 240px;
+    height: 144px;
+    object-fit: cover; /*redimenciona as imagens para o mesmo tamanho sem esticalas, mas precisa reposicionar*/
+    /*object-position: left bottom;*/
+    /*border-radius: 10px;*/ /*aceita todas as medidas, ex: px, %, vh, em, etc.*/
+    /*border: 3px solid orange;*/
+    transition: transform .2s;
+  }
+
+  /*.img-portfolio:hover {
+    box-shadow: 5px 5px 10px 0px black;
+    filter: brightness(1);
+    transform: scale(1.03); /*aqui pode add 'rotate' e outros efeitos, mas nao esquece decrever la no 'transition' em 'img-portfolio {...}
+  }*/
+
+  .flip-card {
+    perspective: 500px;
+  }
+
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+
+  .flip-card:hover .card {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .card-back {
+    box-shadow: 5px 5px 10px 0px black;
+    filter: brightness(1);
+    transform: scale(1.03);
+    background-color: orange;
+    height: 144px;
+    width: 240px;
+    transform: rotateY(180deg);
+  }
+
+  /*@media (min-width: 1240px) {
+    .img-portfolio {
+      height: ;
+      width: ;
+    }
+  }*/
+  
+  .contatos a {
+    transition: text-shadow .2s;
+  }
+  
+  .contatos a:active,
+  .contatos a:hover {
+    text-decoration: none;
+    text-shadow: 4px -4px 4px orange; /*rgba(255, 136, 1, 0.7)*/
+  }
+
+  .contatos {
+    text-align: center;
+    font-size: 2em;
+    padding: 2em;
+    min-height: 100vh;
+    margin-top: 8em;
+  }
+
+  h5 {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  /*aqui alinha todas as sections no centro da pagina*/
+  @media (min-width: 1200px) {
+    .sobre,
+    .contatos,
+    .portfolio {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /*tambem posso colocar 'container' nas class*/
+  /*@media (min-width: 1200px) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+  }
